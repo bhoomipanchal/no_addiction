@@ -40,37 +40,38 @@
           <div class="offset-lg-4 col-lg-4">
             <div class="member align-items-start">
               <div class="text-center">
-                <h2 class="logo me-auto"><a href="index.html">No-Addiction</a></h2>
+                <h2 class="logo me-auto"><a href="index.php">No-Addiction</a></h2>
                 <h4>Welcome Back</h4>
               </div>
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <?php if (isset($_GET['error'])) { ?>
+                <p class="alert alert-danger"><?php echo $_GET['error']; ?></p>
+              <?php } ?>
+              <form action="sign-in-chack.php" method="post" class="php-email-form">
                 <div class="form-group mt-2">
                   <label class="my-1 fw-bold">Email <label class="text-danger">*</label></label>
-                  <input type="text" class="form-control" name="Email" id="Email" placeholder="Email" required>
+                  <input type="email" class="form-control" name="uemail" placeholder="Email" required>
                 </div>
                 <div class="form-group mt-2">
                   <label class="my-1 fw-bold">Password <label class="text-danger">*</label></label>
-                  <input type="text" class="form-control" name="Password" id="Password" placeholder="Password" required>
+                  <input type="password" class="form-control" name="password" placeholder="Password" required>
                 </div>
                 <div class="text-center">
                   <button class="btn btn-primary my-3" type="submit">Sign In</button>
-                  <p>Create new account? <a class="mx-1" href="sign-up.html">Sign Up</a></p>
+                  <p>Create new account? <a class="mx-1" href="sign-up.php">Sign Up</a></p>
                 </div>
               </form>
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- End Doctors Section -->
-
   </main><!-- End #main -->
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

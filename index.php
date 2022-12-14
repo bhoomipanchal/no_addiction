@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+  header("Location: user.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,21 +44,19 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">No Addiction</a></h1>
+      <h1 class="logo me-auto"><a href="index.php">No Addiction</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <!-- <a href="index.php" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#doctors">Daily schedule</a></li> -->
+          <li><a class="nav-link scrollto text-capitalize" href="sign-in.php">Sign-In</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-      <a href="./sign-in.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Sign-In</span></a>
 
     </div>
   </header><!-- End Header -->
@@ -70,7 +76,7 @@
       <div class="container my-5">
         <div class="row ">
           <div class="offset-lg-2 col-lg-8 mt-5 ">
-            
+
           </div>
         </div>
       </div>
@@ -82,15 +88,15 @@
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-            
+
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>About Us</h3>
             <p>In today's generation, teens are more likely to get addicted to smoking and drinking due to their friends and surrounddings. Even if they know its wrong to do such things but still they can't help but to consume. <br><br>
-            After reaching certain age they realise their addiction is life consuming. So to over come these addiction they need to enroll in Rehabs, but due to judgemental society and shame they hesitate to go to rehab.<br><br>
-            We are here for such addicts who want to contol their addiction. All you need to do is enroll yourself with us and strictly follow the diet, medications and given schedule. Though it's very hard to follow medications on own but, if you want to improve you have to work. First it may take time to follow the given schedule daily but as time passes by you will learn to do so (Just like how you learned smoking and drinking xoxo irony) <br><br>
-            Note:It's not really easy to control your addiction even if you want to, it needs many efforts and inputs just to get a little outcome. </p>
+              After reaching certain age they realise their addiction is life consuming. So to over come these addiction they need to enroll in Rehabs, but due to judgemental society and shame they hesitate to go to rehab.<br><br>
+              We are here for such addicts who want to contol their addiction. All you need to do is enroll yourself with us and strictly follow the diet, medications and given schedule. Though it's very hard to follow medications on own but, if you want to improve you have to work. First it may take time to follow the given schedule daily but as time passes by you will learn to do so (Just like how you learned smoking and drinking xoxo irony) <br><br>
+              Note:It's not really easy to control your addiction even if you want to, it needs many efforts and inputs just to get a little outcome. </p>
           </div>
         </div>
 
@@ -110,7 +116,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-cutlery"></i></div>
-              <h4><a href="./sign-in.html">Diet to follow</a></h4>
+              <h4><a href="./sign-in.php">Diet to follow</a></h4>
               <p>Weekly diet chat will be provided on the basis of your consumption.</p>
             </div>
           </div>
@@ -118,7 +124,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-eyedropper"></i></div>
-              <h4><a href="./sign-in.html">Medication Chart</a></h4>
+              <h4><a href="./sign-in.php">Medication Chart</a></h4>
               <p>Medication chart will be prescribed to you by the Doctor on the basic of your daily consumption.</p>
             </div>
           </div>
@@ -126,7 +132,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="fas fa-home"></i></div>
-              <h4><a href="./sign-in.html">Activities to do at home</a></h4>
+              <h4><a href="./sign-in.php">Activities to do at home</a></h4>
               <p>List of activities will be suggedted to you to divert your mind form consuming.</p>
             </div>
           </div>
@@ -134,7 +140,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="fas fa-video-camera"></i></div>
-              <h4><a href="./sign-in.html">Exercise Videos</a></h4>
+              <h4><a href="./sign-in.php">Exercise Videos</a></h4>
               <p>Exercise and meditation videos will be provided.</p>
             </div>
           </div>
@@ -149,12 +155,12 @@
   <footer id="footer">
     <div class="container py-3">
 
-      <div class=" text-center">        
+      <div class=" text-center">
         <div class="credits">
-          Designed by Bhoomi Panchal 
+          Designed by Bhoomi Panchal
         </div>
       </div>
-    
+
     </div>
   </footer><!-- End Footer -->
 
@@ -163,7 +169,6 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

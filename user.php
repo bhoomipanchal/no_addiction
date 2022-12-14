@@ -1,0 +1,183 @@
+<?php
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>No Addiction</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <!-- Favicons -->
+        <link href="" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+        <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="assets/css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top">
+            <div class="container d-flex align-items-center">
+
+                <h1 class="logo me-auto"><a href="index.php">No Addiction</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.php" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+                <nav id="navbar" class="navbar order-last order-lg-0">
+                    <ul>
+                        <li><a class="nav-link scrollto text-capitalize active" href="#hero">Home</a></li>
+                        <li><a class="nav-link scrollto text-capitalize" href="#about">About</a></li>
+                        <li><a class="nav-link scrollto text-capitalize" href="#services">Services</a></li>
+                        <li><a class="nav-link scrollto text-capitalize" href="#doctors">Daily schedule</a></li>
+                        <li><a class="nav-link scrollto text-capitalize" href="#doctors"><?php echo $_SESSION['name']; ?></a></li>
+                        <li><a class="nav-link scrollto text-capitalize" href="sign-out.php">Sign-Out</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+            </div>
+        </header><!-- End Header -->
+
+        <!-- ======= Hero Section ======= -->
+        <section id="hero" class="d-flex align-items-center">
+            <div class="container">
+                <h1>Welcome to No Addiction</h1>
+                <h2>We are here to help you <br> control your addiction.</h2>
+            </div>
+        </section><!-- End Hero -->
+
+        <main id="main">
+
+            <!-- ======= Why Us Section ======= -->
+            <section id="why-us" class="why-us">
+                <div class="container my-5">
+                    <div class="row ">
+                        <div class="offset-lg-2 col-lg-8 mt-5 ">
+
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End Why Us Section -->
+
+            <!-- ======= About Section ======= -->
+            <section id="about" class="about">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+
+                        </div>
+
+                        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                            <h3>About Us</h3>
+                            <p>In today's generation, teens are more likely to get addicted to smoking and drinking due to their friends and surrounddings. Even if they know its wrong to do such things but still they can't help but to consume. <br><br>
+                                After reaching certain age they realise their addiction is life consuming. So to over come these addiction they need to enroll in Rehabs, but due to judgemental society and shame they hesitate to go to rehab.<br><br>
+                                We are here for such addicts who want to contol their addiction. All you need to do is enroll yourself with us and strictly follow the diet, medications and given schedule. Though it's very hard to follow medications on own but, if you want to improve you have to work. First it may take time to follow the given schedule daily but as time passes by you will learn to do so (Just like how you learned smoking and drinking xoxo irony) <br><br>
+                                Note:It's not really easy to control your addiction even if you want to, it needs many efforts and inputs just to get a little outcome. </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End About Section -->
+
+            <!-- ======= Services Section ======= -->
+            <section id="services" class="services">
+                <div class="container">
+
+                    <div class="section-title">
+                        <h2>Services</h2>
+                        <p>To contorl and overcome your addiction we provies following services that you must follow if you want to improve.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="icon-box">
+                                <div class="icon"><i class="fa fa-cutlery"></i></div>
+                                <h4><a href="./sign-in.php">Diet to follow</a></h4>
+                                <p>Weekly diet chat will be provided on the basis of your consumption.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                            <div class="icon-box">
+                                <div class="icon"><i class="fa fa-eyedropper"></i></div>
+                                <h4><a href="./sign-in.php">Medication Chart</a></h4>
+                                <p>Medication chart will be prescribed to you by the Doctor on the basic of your daily consumption.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                            <div class="icon-box">
+                                <div class="icon"><i class="fas fa-home"></i></div>
+                                <h4><a href="./sign-in.php">Activities to do at home</a></h4>
+                                <p>List of activities will be suggedted to you to divert your mind form consuming.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                            <div class="icon-box">
+                                <div class="icon"><i class="fas fa-video-camera"></i></div>
+                                <h4><a href="./sign-in.php">Exercise Videos</a></h4>
+                                <p>Exercise and meditation videos will be provided.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End Services Section -->
+
+        </main><!-- End #main -->
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container py-3">
+
+                <div class=" text-center">
+                    <div class="credits">
+                        Designed by Bhoomi Panchal
+                    </div>
+                </div>
+
+            </div>
+        </footer><!-- End Footer -->
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+    </body>
+
+    </html>
+<?php
+} else {
+    header("Location: index.php");
+    exit();
+}
+?>

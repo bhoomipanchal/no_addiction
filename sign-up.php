@@ -39,10 +39,13 @@
           <div class="offset-lg-3 col-lg-6">
             <div class="member align-items-start">
               <div class="text-center">
-                <h2 class="logo me-auto"><a href="index.html">No-Addiction</a></h2>
+                <h2 class="logo me-auto"><a href="index.php">No-Addiction</a></h2>
                 <h4>Welcome</h4>
               </div>
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <?php if (isset($_GET['error'])) { ?>
+                <p class="alert alert-danger"><?php echo $_GET['error']; ?></p>
+              <?php } ?>
+              <form action="sign-up-check.php" method="post" class="php-email-form">
                 <div class="form-group mt-2 my-1">
                   <label class="my-1 fw-bold">Gender <label class="text-danger">*</label></label> <br>
                   <input type="radio" name="gander" class="mx-1" id="gander">Male
@@ -89,7 +92,7 @@
                 </div>
                 <div class="text-center">
                   <button class="btn btn-primary my-3" type="submit">Sign Up</button>
-                  <div class="fs-6">Already have account? <a class="mx-1" href="sign-in.html">Sign In</a></div>
+                  <div class="fs-6">Already have account? <a class="mx-1" href="sign-in.php">Sign In</a></div>
                 </div>
               </form>
             </div>
@@ -105,7 +108,6 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
