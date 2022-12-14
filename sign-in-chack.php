@@ -2,7 +2,7 @@
 session_start();
 include "db_conn.php";
 
-if (isset($_POST['uemail']) && isset($_POST['password'])) {
+if (isset($_POST['email']) && isset($_POST['password'])) {
 
   function validate($data)
   {
@@ -12,11 +12,11 @@ if (isset($_POST['uemail']) && isset($_POST['password'])) {
     return $data;
   }
 
-  $uemail = validate($_POST['uemail']);
+  $email = validate($_POST['email']);
   $upassword = validate($_POST['password']);
 
-  if (empty($uemail)) {
-    header("Location: sign-in.php?error=User Name is required");
+  if (empty($email)) {
+    header("Location: sign-in.php?error=User Email is required");
     exit();
   } else if (empty($upassword)) {
     header("Location: sign-in.php?error=Password is required");
@@ -25,13 +25,13 @@ if (isset($_POST['uemail']) && isset($_POST['password'])) {
     // hashing the password
     // $upassword = md5($upassword);
 
-    $sql = "SELECT * FROM users WHERE email='$uemail' AND password='$upassword'";
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$upassword'";
 
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) === 1) {
       $row = mysqli_fetch_assoc($result);
-      if ($row['email'] === $uemail && $row['password'] === $upassword) {
+      if ($row['email'] === $email && $row['password'] === $upassword) {
         $_SESSION['email'] = $row['email'];
         $_SESSION['name'] = $row['name'];
         $_SESSION['id'] = $row['id'];

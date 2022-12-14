@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$alcalcoholic = "";
+$smoker = "";
 if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
 ?>
@@ -48,11 +49,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
-                        <li><a class="nav-link scrollto text-capitalize active" href="#hero">Home</a></li>
-                        <li><a class="nav-link scrollto text-capitalize" href="#about">About</a></li>
-                        <li><a class="nav-link scrollto text-capitalize" href="#services">Services</a></li>
-                        <li><a class="nav-link scrollto text-capitalize" href="#doctors">Daily schedule</a></li>
-                        <li><a class="nav-link scrollto text-capitalize" href="#doctors"><?php echo $_SESSION['name']; ?></a></li>
+                        <li><a class="nav-link scrollto text-capitalize"><?php echo $_SESSION['name']; ?></a></li>
                         <li><a class="nav-link scrollto text-capitalize" href="sign-out.php">Sign-Out</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
@@ -60,47 +57,89 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
             </div>
         </header><!-- End Header -->
 
-        <!-- ======= Hero Section ======= -->
-        <section id="hero" class="d-flex align-items-center">
-            <div class="container">
-                <h1>Welcome to No Addiction</h1>
-                <h2>We are here to help you <br> control your addiction.</h2>
-            </div>
-        </section><!-- End Hero -->
 
         <main id="main">
 
             <!-- ======= Why Us Section ======= -->
             <section id="why-us" class="why-us">
-                <div class="container my-5">
+                <div class="container">
                     <div class="row ">
-                        <div class="offset-lg-2 col-lg-8 mt-5 ">
+                        <div class="offset-lg-4 col-lg-8">
 
                         </div>
                     </div>
                 </div>
             </section><!-- End Why Us Section -->
 
-            <!-- ======= About Section ======= -->
-            <section id="about" class="about">
-                <div class="container-fluid">
+            <section id="services" class="services">
+                <div class="container">
+                    <?php if (isset($_GET['error'])) { ?>
+                        <p class="alert alert-danger"><?php echo $_GET['error']; ?></p>
+                    <?php } ?>
+                    <?php if (isset($_GET['success'])) { ?>
+                        <p class="alert alert-success"><?php echo $_GET['success']; ?></p>
+                    <?php } ?>
+                    <div class="section-title-home text-capitalize">
+                        <h2>Welcome</h2>
+                    </div>
 
                     <div class="row">
-                        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-
-                        </div>
-
-                        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                            <h3>About Us</h3>
-                            <p>In today's generation, teens are more likely to get addicted to smoking and drinking due to their friends and surrounddings. Even if they know its wrong to do such things but still they can't help but to consume. <br><br>
-                                After reaching certain age they realise their addiction is life consuming. So to over come these addiction they need to enroll in Rehabs, but due to judgemental society and shame they hesitate to go to rehab.<br><br>
-                                We are here for such addicts who want to contol their addiction. All you need to do is enroll yourself with us and strictly follow the diet, medications and given schedule. Though it's very hard to follow medications on own but, if you want to improve you have to work. First it may take time to follow the given schedule daily but as time passes by you will learn to do so (Just like how you learned smoking and drinking xoxo irony) <br><br>
-                                Note:It's not really easy to control your addiction even if you want to, it needs many efforts and inputs just to get a little outcome. </p>
+                        <div class="offset-lg-2 col-lg-8">
+                            <div class="icon-box-form">
+                                <p class="text-center text-uppercase fw-bolder text-muted">please, give us following details.</p>
+                                <form action="user_add.php">
+                                    <div class="row my-2">
+                                        <div class="col-md-6">
+                                            <div class="form-group mt-1 text-center">
+                                                <input class="form-check-input mx-2" type="checkbox" name="alcoholic" id="alcoholic" value="alcoholic" placeholder="Name" onclick="isAlcoholic()">
+                                                <label class="fw-bold">Are you alcoholic? <label class="text-danger">*</label></label>
+                                            </div>
+                                            <div id="alcoholicform" style="display:none">
+                                                <div class="form-group mt-3">
+                                                    <label class="my-1">Which alcohol you drink? <label class="text-danger">*</label></label>
+                                                    <input type="text" class="form-control" name="aq1" placeholder="enter name">
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label class="my-1">How much (ml) you consume a day? <label class="text-danger">*</label></label>
+                                                    <input type="number" class="form-control" name="aq2" placeholder="enter number">
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label class="my-1">How long can you stay without alcohol? <label class="text-danger">*</label></label>
+                                                    <input type="text" class="form-control" name="aq3" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mt-1 text-center">
+                                                <input class="form-check-input mx-2" type="checkbox" name="smoker" id="smoker" value="smoker" placeholder="Name" onclick="isSmoker()">
+                                                <label class="fw-bold">Are you smoker? <label class="text-danger">*</label></label>
+                                            </div>
+                                            <div id="smokerform" style="display:none">
+                                                <div class="form-group mt-3">
+                                                    <label class="my-1">What do you smoke? <label class="text-danger">*</label></label>
+                                                    <input type="text" class="form-control" name="sq1" placeholder="enter name">
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label class="my-1">How much (packets) a day? <label class="text-danger">*</label></label>
+                                                    <input type="text" class="form-control" name="sq2" placeholder="enter number">
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label class="my-1">How long can you stay without alcohol? <label class="text-danger">*</label></label>
+                                                    <input type="text" class="form-control" name="sq3" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                                            <button class="btn btn-primary" id="btnform" style="display:none">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            </section><!-- End About Section -->
+            </section>
 
             <!-- ======= Services Section ======= -->
             <section id="services" class="services">
@@ -162,7 +201,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
             </div>
         </footer><!-- End Footer -->
-
         <!-- Vendor JS Files -->
         <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -171,6 +209,49 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
         <!-- Template Main JS File -->
         <script src="assets/js/main.js"></script>
+        <script>
+            var btnform = document.getElementById("btnform");
+            var alcohol = "";
+            var smoker = "";
+
+            function isAlcoholic() {
+                // Get the checkbox
+                alcohol = document.getElementById("alcoholic");
+                // Get the output text
+                var text = document.getElementById("alcoholicform");
+
+                // If the checkbox is checked, display the output text
+                if (alcohol.checked == true) {
+                    text.style.display = "block";
+                } else {
+                    text.style.display = "none";
+                }
+                formbutton();
+            }
+
+            function isSmoker() {
+                // Get the checkbox
+                smoker = document.getElementById("smoker");
+                // Get the output text
+                var text = document.getElementById("smokerform");
+
+                // If the checkbox is checked, display the output text
+                if (smoker.checked == true) {
+                    text.style.display = "block";
+                } else {
+                    text.style.display = "none";
+                }
+                formbutton();
+            }
+
+            function formbutton() {
+                if (alcohol.checked == true || smoker.checked == true) {
+                    btnform.style.display = "block";
+                } else {
+                    btnform.style.display = "none";
+                }
+            }
+        </script>
 
     </body>
 

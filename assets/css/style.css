@@ -1,13 +1,11 @@
-/**
-* Template Name: Medilab - v4.9.1
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.alert {
+  --bs-alert-padding-x: 0.5rem;
+  --bs-alert-padding-y: 0.5rem;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -563,7 +561,7 @@ section {
   background-color: #f1f7fd;
 }
 
-.section-title {
+.section-title, .section-title-home {
   text-align: center;
   padding-bottom: 30px;
 }
@@ -573,6 +571,13 @@ section {
   font-weight: bold;
   margin-bottom: 20px;
   padding-bottom: 20px;
+  position: relative;
+  color: #2c4964;
+}
+
+.section-title-home h2 {
+  font-size: 32px;
+  font-weight: bold;
   position: relative;
   color: #2c4964;
 }
@@ -952,7 +957,15 @@ section {
 .services .icon-box {
   text-align: center;
   border: 1px solid #d5e1ed;
+  border-radius: 5px;
   padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+}
+
+.services .icon-box-form {
+  border: 2px solid #d5e1ed;
+  border-radius: 5px;
+  padding: 20px;
   transition: all ease-in-out 0.3s;
 }
 

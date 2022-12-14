@@ -45,53 +45,48 @@
               <?php if (isset($_GET['error'])) { ?>
                 <p class="alert alert-danger"><?php echo $_GET['error']; ?></p>
               <?php } ?>
-              <form action="sign-up-check.php" method="post" class="php-email-form">
-                <div class="form-group mt-2 my-1">
-                  <label class="my-1 fw-bold">Gender <label class="text-danger">*</label></label> <br>
-                  <input type="radio" name="gander" class="mx-1" id="gander">Male
-                  <input type="radio" name="gander" class="mx-1" id="gander">Female
-                </div>
+              <form action="sign-up-chack.php" method="post" class="php-email-form">
                 <div class="form-group mt-2">
                   <label class="my-1 fw-bold">Name <label class="text-danger">*</label></label>
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" class="form-control" name="name" placeholder="Name" <?php if (isset($_GET['name'])) { echo "value='".$_GET['name']."'"; } ?> >
                 </div>
                 <div class="row mt-2">
                   <div class="col-md-6 form-group mt-2 mt-md-0">
                     <label class="my-1 fw-bold">Email <label class="text-danger">*</label></label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    <input type="email" class="form-control" name="email" placeholder="Email" <?php if (isset($_GET['email'])) { echo "value='".$_GET['email']."'"; } ?>>
                   </div>
                   <div class="col-md-6 form-group">
                     <label class="my-1 fw-bold">Contact No.</label>
-                    <input type="text" class="form-control" name="contactno" id="contactno" placeholder="Contact">
+                    <input type="text" class="form-control" name="contact" placeholder="Contact" <?php if (isset($_GET['contact'])) { echo "value='".$_GET['contact']."'"; } ?>>
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col-md-6 form-group mt-2 my-1">
+                    <label class="my-1 fw-bold">Gender <label class="text-danger">*</label></label> <br>
+                    <input type="radio" class="form-check-input mx-2" name="gender" value="male" <?php if (isset($_GET['gender']) && $_GET['gender'] == 'male') { echo "checked"; } ?>>Male
+                    <input type="radio" class="form-check-input mx-2" name="gender" value="female" <?php if (isset($_GET['gender']) && $_GET['gender'] == 'female') { echo "checked"; } ?>>Female
+                  </div>
+                  <div class="col-md-6 form-group mt-1">
+                    <label class="my-1 fw-bold">Age <label class="text-danger">*</label></label>
+                    <input type="number" class="form-control" name="age" placeholder="Age" <?php if (isset($_GET['age'])) { echo "value='".$_GET['age']."'"; } ?>>
                   </div>
                 </div>
                 <div class="form-group mt-2">
                   <label class="my-1 fw-bold">Address</label>
-                  <textarea class="form-control" name="address" rows="3" placeholder="Address"></textarea>
-                </div>
-                <div class="form-group mt-2">
-                  <label class="my-1 fw-bold">Addiction Type <label class="text-danger">*</label></label>
-                  <select class="form-control" name="addict" id="addict" required>
-                    <option value="">Select Type</option>
-                    <option value="smoker">Smoker</option>
-                    <option value="alcohole">Alcohole</option>
-                    <option value="both">both</option>
-                  </select>
+                  <textarea class="form-control" name="address" rows="3" placeholder="Address"> <?php if (isset($_GET['address'])) { echo $_GET['address']; } ?></textarea>
                 </div>
                 <div class="row mt-2">
                   <div class="col-md-6 form-group mt-2 mt-md-0">
                     <label class="my-1 fw-bold">Password <label class="text-danger">*</label></label>
-                    <input type="email" class="form-control" name="password" id="password" placeholder="Your Password"
-                      required>
+                    <input type="password" class="form-control" name="password" placeholder="Password" <?php if (isset($_GET['password'])) { echo "value='".$_GET['password']."'"; } ?>>
                   </div>
                   <div class="col-md-6 form-group">
                     <label class="my-1 fw-bold">Confirm Password. <label class="text-danger">*</label></label>
-                    <input type="text" class="form-control" name="contactno" id="contactno"
-                      placeholder="Confirm Password" required>
+                    <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" <?php if (isset($_GET['confirmpassword'])) { echo "value='".$_GET['confirmpassword']."'"; } ?>>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button class="btn btn-primary my-3" type="submit">Sign Up</button>
+                  <button class="btn btn-primary mt-3 mb-2" type="submit">Sign Up</button>
                   <div class="fs-6">Already have account? <a class="mx-1" href="sign-in.php">Sign In</a></div>
                 </div>
               </form>

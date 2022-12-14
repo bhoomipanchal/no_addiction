@@ -13,9 +13,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -49,15 +47,15 @@
               <form action="sign-in-chack.php" method="post" class="php-email-form">
                 <div class="form-group mt-2">
                   <label class="my-1 fw-bold">Email <label class="text-danger">*</label></label>
-                  <input type="email" class="form-control" name="uemail" placeholder="Email" required>
+                  <input type="email" class="form-control" name="email" placeholder="Email">
                 </div>
                 <div class="form-group mt-2">
                   <label class="my-1 fw-bold">Password <label class="text-danger">*</label></label>
-                  <input type="password" class="form-control" name="password" placeholder="Password" required>
+                  <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
                 <div class="text-center">
-                  <button class="btn btn-primary my-3" type="submit">Sign In</button>
-                  <p>Create new account? <a class="mx-1" href="sign-up.php">Sign Up</a></p>
+                  <button class="btn btn-primary mt-3 mb-2" type="submit">Sign In</button>
+                  <div class="text-sm">Create new account? <a class="mx-1" href="sign-up.php">Sign Up</a></div>
                 </div>
               </form>
             </div>
