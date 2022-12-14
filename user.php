@@ -42,11 +42,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top">
             <div class="container d-flex align-items-center">
-
                 <h1 class="logo me-auto"><a href="index.php">No Addiction</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.php" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
                         <li><a class="nav-link scrollto text-capitalize"><?php echo $_SESSION['name']; ?></a></li>
@@ -56,7 +52,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                 </nav><!-- .navbar -->
             </div>
         </header><!-- End Header -->
-
 
         <main id="main">
 
@@ -86,51 +81,64 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                     <div class="row">
                         <div class="offset-lg-2 col-lg-8">
                             <div class="icon-box-form">
-                                <p class="text-center text-uppercase fw-bolder text-muted">please, give us following details.</p>
-                                <form action="user_add.php">
+                                <p class="text-center text-capitalize fw-bolder text-muted">please, give us following details.</p>
+                                <form action="user_add.php" method="post">
                                     <div class="row my-2">
+                                        <div class="offset-md-3 col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label class="my-1 fw-bold">Services <label class="text-danger">*</label></label>
+                                                <select class="form-control" name="services">
+                                                    <option value="">Select Services</option>
+                                                    <option <?php if (isset($_GET['services']) && $_GET['services'] == 'diet') { echo "selected"; } ?> value="diet">Diet to follow</option>
+                                                    <option <?php if (isset($_GET['services']) && $_GET['services'] == 'chart') { echo "selected"; } ?> value="chart">Medication Chart</option>
+                                                    <option <?php if (isset($_GET['services']) && $_GET['services'] == 'home') { echo "selected"; } ?> value="home">Activities to do at home</option>
+                                                    <option <?php if (isset($_GET['services']) && $_GET['services'] == 'video') { echo "selected"; } ?> value="video">Exercise Videos</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="form-group mt-1 text-center">
-                                                <input class="form-check-input mx-2" type="checkbox" name="alcoholic" id="alcoholic" value="alcoholic" placeholder="Name" onclick="isAlcoholic()">
+                                                <input class="form-check-input mx-2" type="checkbox" name="addictiontype[]" id="alcoholic" value="alcoholic" <?php if (isset($_GET['alcoholic']) && $_GET['alcoholic'] == 'alcoholic') { echo "checked"; } ?> onclick="isChecked('alcoholic','alcoholicform')">
                                                 <label class="fw-bold">Are you alcoholic? <label class="text-danger">*</label></label>
                                             </div>
-                                            <div id="alcoholicform" style="display:none">
+                                            <div id="alcoholicform" <?php if (isset($_GET['alcoholic']) && $_GET['alcoholic'] == 'alcoholic') { echo 'style="display:block"'; } else { echo 'style="display:none"'; } ?> >
                                                 <div class="form-group mt-3">
                                                     <label class="my-1">Which alcohol you drink? <label class="text-danger">*</label></label>
-                                                    <input type="text" class="form-control" name="aq1" placeholder="enter name">
+                                                    <input type="text" class="form-control" name="aq1" placeholder="enter name" <?php if (isset($_GET['aq1'])) { echo "value='".$_GET['aq1']."'"; } ?>>
                                                 </div>
                                                 <div class="form-group mt-3">
                                                     <label class="my-1">How much (ml) you consume a day? <label class="text-danger">*</label></label>
-                                                    <input type="number" class="form-control" name="aq2" placeholder="enter number">
+                                                    <input type="number" class="form-control" name="aq2" placeholder="enter number" <?php if (isset($_GET['aq2'])) { echo "value='".$_GET['aq2']."'"; } ?>>
                                                 </div>
                                                 <div class="form-group mt-3">
                                                     <label class="my-1">How long can you stay without alcohol? <label class="text-danger">*</label></label>
-                                                    <input type="text" class="form-control" name="aq3" placeholder="">
+                                                    <input type="text" class="form-control" name="aq3" placeholder="" <?php if (isset($_GET['aq3'])) { echo "value='".$_GET['aq3']."'"; } ?>>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group mt-1 text-center">
-                                                <input class="form-check-input mx-2" type="checkbox" name="smoker" id="smoker" value="smoker" placeholder="Name" onclick="isSmoker()">
+                                                <input class="form-check-input mx-2" type="checkbox" name="addictiontype[]" id="smoker" value="smoker" <?php if (isset($_GET['smoker']) && $_GET['smoker'] == 'smoker') { echo "checked"; } ?> onclick="isChecked('smoker','smokerform')">
                                                 <label class="fw-bold">Are you smoker? <label class="text-danger">*</label></label>
                                             </div>
-                                            <div id="smokerform" style="display:none">
+                                            <div id="smokerform" <?php if (isset($_GET['smoker']) && $_GET['smoker'] == 'smoker') { echo 'style="display:block"'; } else { echo 'style="display:none"'; } ?>>
                                                 <div class="form-group mt-3">
                                                     <label class="my-1">What do you smoke? <label class="text-danger">*</label></label>
-                                                    <input type="text" class="form-control" name="sq1" placeholder="enter name">
+                                                    <input type="text" class="form-control" name="sq1" placeholder="enter name" <?php if (isset($_GET['sq1'])) { echo "value='".$_GET['sq1']."'"; } ?>>
                                                 </div>
                                                 <div class="form-group mt-3">
                                                     <label class="my-1">How much (packets) a day? <label class="text-danger">*</label></label>
-                                                    <input type="text" class="form-control" name="sq2" placeholder="enter number">
+                                                    <input type="number" class="form-control" name="sq2" placeholder="enter number" <?php if (isset($_GET['sq2'])) { echo "value='".$_GET['sq2']."'"; } ?>>
                                                 </div>
                                                 <div class="form-group mt-3">
                                                     <label class="my-1">How long can you stay without alcohol? <label class="text-danger">*</label></label>
-                                                    <input type="text" class="form-control" name="sq3" placeholder="">
+                                                    <input type="text" class="form-control" name="sq3" placeholder="" <?php if (isset($_GET['sq3'])) { echo "value='".$_GET['sq3']."'"; } ?>>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2 col-6 mx-auto mt-4">
-                                            <button class="btn btn-primary" id="btnform" style="display:none">Submit</button>
+                                            <button class="btn btn-primary">Submit</button>
+                                            <!-- <button class="btn btn-primary" id="btnform" style="display:none">Submit</button> -->
                                         </div>
                                     </div>
                                 </form>
@@ -214,11 +222,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
             var alcohol = "";
             var smoker = "";
 
-            function isAlcoholic() {
+            function isChecked(val1, val2) {
                 // Get the checkbox
-                alcohol = document.getElementById("alcoholic");
+                alcohol = document.getElementById(val1);
                 // Get the output text
-                var text = document.getElementById("alcoholicform");
+                var text = document.getElementById(val2);
 
                 // If the checkbox is checked, display the output text
                 if (alcohol.checked == true) {
@@ -226,33 +234,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                 } else {
                     text.style.display = "none";
                 }
-                formbutton();
-            }
-
-            function isSmoker() {
-                // Get the checkbox
-                smoker = document.getElementById("smoker");
-                // Get the output text
-                var text = document.getElementById("smokerform");
-
-                // If the checkbox is checked, display the output text
-                if (smoker.checked == true) {
-                    text.style.display = "block";
-                } else {
-                    text.style.display = "none";
-                }
-                formbutton();
-            }
-
-            function formbutton() {
-                if (alcohol.checked == true || smoker.checked == true) {
-                    btnform.style.display = "block";
-                } else {
-                    btnform.style.display = "none";
-                }
             }
         </script>
-
     </body>
 
     </html>

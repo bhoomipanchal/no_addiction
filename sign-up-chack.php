@@ -6,6 +6,7 @@ if (
 	isset($_POST['name']) &&
 	isset($_POST['email']) &&
 	isset($_POST['contact']) &&
+	isset($_POST['gender']) &&
 	isset($_POST['age']) &&
 	isset($_POST['address']) &&
 	isset($_POST['password']) &&
@@ -76,8 +77,6 @@ if (
 		}
 	}
 } else {
-	echo "zxczxc";
-	exit();
 	header("Location: sign-up.php");
 	exit();
 }
