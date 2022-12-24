@@ -4,9 +4,9 @@ include "db_conn.php";
 
 $addictiontype = [];
 
-if (
-    isset($_POST['services'])
-) {
+// if (
+//     isset($_POST['services'])
+// ) {
     function test_input($data)
     {
         $data = trim($data);
@@ -15,7 +15,7 @@ if (
         return $data;
     }
 
-    $services = $_POST['services'];
+    // $services = $_POST['services'];
 
     $alcoholic = '';
     $smoker = '';
@@ -28,12 +28,14 @@ if (
     $sq2 = '';
     $sq3 = '';
 
-    $user_data = 'services=' . $services;
+    // $user_data = 'services=' . $services;
+    $user_data = '';
 
-    if (empty($services)) {
-        header("Location: user.php?error=Services is required&$user_data");
-        exit();
-    } else if (
+    // if (empty($services)) {
+    //     header("Location: user.php?error=Services is required&$user_data");
+    //     exit();
+    // } else 
+    if (
         !isset($_POST['addictiontype'])
     ) {
         header("Location: user.php?error=Please select any one adiction type select&$user_data");
@@ -101,7 +103,7 @@ if (
         header("Location: user.php?error=unknown error occurred&$user_data");
         exit();
     }
-} else {
-    header("Location: user.php");
-    exit();
-}
+// } else {
+//     header("Location: user.php");
+//     exit();
+// }
