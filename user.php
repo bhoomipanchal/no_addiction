@@ -179,7 +179,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                     <?php } ?>
                 </div>
             </section>
-
+            
+            <?php if (isset($_GET['success'])) { ?>
             <!-- ======= Services Section ======= -->
             <section id="services" class="services">
                 <div class="container">
@@ -225,7 +226,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
                 </div>
             </section><!-- End Services Section -->
-
+            <?php } ?>
         </main><!-- End #main -->
 
         <!-- ======= Footer ======= -->
