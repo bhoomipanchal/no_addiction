@@ -157,7 +157,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
       <div class=" text-center">
         <div class="credits">
-          Designed by Bhoomi Panchal
+          Designed by 337118(B6)
         </div>
       </div>
 
