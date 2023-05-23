@@ -97,7 +97,7 @@ $addictiontype = [];
 
 
     if ($result2) {
-        header("Location: user.php?success=Your information save successfully, we shortly reply to you.");
+        header("Location: user.php?success= Your information is stored sucessfully. We will shortly reply you.");
         exit();
     } else {
         header("Location: user.php?error=unknown error occurred&$user_data");

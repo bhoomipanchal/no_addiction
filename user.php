@@ -108,7 +108,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                                                     <input class="form-check-input mx-2" type="checkbox" name="addictiontype[]" id="alcoholic" value="alcoholic" <?php if (isset($_GET['alcoholic']) && $_GET['alcoholic'] == 'alcoholic') {
                                                                                                                                                                         echo "checked";
                                                                                                                                                                     } ?> onclick="isChecked('alcoholic','alcoholicform')">
-                                                    <label class="fw-bold">Are you alcoholic? <label class="text-danger">*</label></label>
+                                                    <label class="fw-bold">Are you an alcoholic? <label class="text-danger">*</label></label>
                                                 </div>
                                                 <div id="alcoholicform" <?php if (isset($_GET['alcoholic']) && $_GET['alcoholic'] == 'alcoholic') {
                                                                             echo 'style="display:block"';
@@ -116,20 +116,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                                                                             echo 'style="display:none"';
                                                                         } ?>>
                                                     <div class="form-group mt-3">
-                                                        <label class="my-1">Which alcohol you drink? <label class="text-danger">*</label></label>
+                                                        <label class="my-1">Which alcohol do you drink often? <label class="text-danger">*</label></label>
                                                         <input type="text" class="form-control" name="aq1" placeholder="enter name" <?php if (isset($_GET['aq1'])) {
                                                                                                                                         echo "value='" . $_GET['aq1'] . "'";
                                                                                                                                     } ?>>
                                                     </div>
                                                     <div class="form-group mt-3">
-                                                        <label class="my-1">How much (ml) you consume a day? <label class="text-danger">*</label></label>
+                                                        <label class="my-1">How much amount(ml) you consume in a day? <label class="text-danger">*</label></label>
                                                         <input type="number" class="form-control" name="aq2" placeholder="enter number" <?php if (isset($_GET['aq2'])) {
                                                                                                                                             echo "value='" . $_GET['aq2'] . "'";
                                                                                                                                         } ?>>
                                                     </div>
                                                     <div class="form-group mt-3">
                                                         <label class="my-1">How long can you stay without alcohol? <label class="text-danger">*</label></label>
-                                                        <input type="text" class="form-control" name="aq3" placeholder="" <?php if (isset($_GET['aq3'])) {
+                                                        <input type="text" class="form-control" name="aq3" placeholder="(eg: 1 day)" <?php if (isset($_GET['aq3'])) {
                                                                                                                                 echo "value='" . $_GET['aq3'] . "'";
                                                                                                                             } ?>>
                                                     </div>
@@ -140,7 +140,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                                                     <input class="form-check-input mx-2" type="checkbox" name="addictiontype[]" id="smoker" value="smoker" <?php if (isset($_GET['smoker']) && $_GET['smoker'] == 'smoker') {
                                                                                                                                                                 echo "checked";
                                                                                                                                                             } ?> onclick="isChecked('smoker','smokerform')">
-                                                    <label class="fw-bold">Are you smoker? <label class="text-danger">*</label></label>
+                                                    <label class="fw-bold">Are you a smoker? <label class="text-danger">*</label></label>
                                                 </div>
                                                 <div id="smokerform" <?php if (isset($_GET['smoker']) && $_GET['smoker'] == 'smoker') {
                                                                             echo 'style="display:block"';
@@ -148,20 +148,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                                                                             echo 'style="display:none"';
                                                                         } ?>>
                                                     <div class="form-group mt-3">
-                                                        <label class="my-1">What do you smoke? <label class="text-danger">*</label></label>
+                                                        <label class="my-1">What do you smoke often? <label class="text-danger">*</label></label>
                                                         <input type="text" class="form-control" name="sq1" placeholder="enter name" <?php if (isset($_GET['sq1'])) {
                                                                                                                                         echo "value='" . $_GET['sq1'] . "'";
                                                                                                                                     } ?>>
                                                     </div>
                                                     <div class="form-group mt-3">
-                                                        <label class="my-1">How much (packets) a day? <label class="text-danger">*</label></label>
+                                                        <label class="my-1">How much amount(packets) you consume in a day? <label class="text-danger">*</label></label>
                                                         <input type="number" class="form-control" name="sq2" placeholder="enter number" <?php if (isset($_GET['sq2'])) {
                                                                                                                                             echo "value='" . $_GET['sq2'] . "'";
                                                                                                                                         } ?>>
                                                     </div>
                                                     <div class="form-group mt-3">
-                                                        <label class="my-1">How long can you stay without alcohol? <label class="text-danger">*</label></label>
-                                                        <input type="text" class="form-control" name="sq3" placeholder="" <?php if (isset($_GET['sq3'])) {
+                                                        <label class="my-1">How long can you stay without smoking? <label class="text-danger">*</label></label>
+                                                        <input type="text" class="form-control" name="sq3" placeholder="(eg: 1 day)" <?php if (isset($_GET['sq3'])) {
                                                                                                                                 echo "value='" . $_GET['sq3'] . "'";
                                                                                                                             } ?>>
                                                     </div>

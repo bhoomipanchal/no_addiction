@@ -92,11 +92,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h3>About Us</h3>
+            <h3>Overview</h3>
             <p>In today's generation, teens are more likely to get addicted to smoking and drinking due to their friends and surrounddings. Even if they know its wrong to do such things but still they can't help but to consume. <br><br>
               After reaching certain age they realise their addiction is life consuming. So to over come these addiction they need to enroll in Rehabs, but due to judgemental society and shame they hesitate to go to rehab.<br><br>
-              We are here for such addicts who want to contol their addiction. All you need to do is enroll yourself with us and strictly follow the diet, medications and given schedule. Though it's very hard to follow medications on own but, if you want to improve you have to work. First it may take time to follow the given schedule daily but as time passes by you will learn to do so (Just like how you learned smoking and drinking xoxo irony) <br><br>
-              Note:It's not really easy to control your addiction even if you want to, it needs many efforts and inputs just to get a little outcome. </p>
+              We are here for such addicts who want to contol their addiction. All you need to do is enroll yourself with us and strictly follow the diet, medications and given schedule. Though it's very hard to follow medications on own but, if you want to improve you have to work. First it may take time to follow the given schedule daily but as time passes by you will learn to do so (Just like how you learned smoking and drinking) <br><br>
+              Also there are people who are not able to enroll into rehabs due to busy schedule and their addiction is at minor level can also enroll here with us. </p>
           </div>
         </div>
 
@@ -157,7 +157,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
       <div class=" text-center">
         <div class="credits">
-          Designed by Bhoomi Panchal
+          Designed by 337118(B6)
         </div>
       </div>
 
