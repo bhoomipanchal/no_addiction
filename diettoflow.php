@@ -81,12 +81,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                                     <li>copy this li element</li>
                                 </ul>
                                 <p>Weekly diet chat will be provided on the basis of your consumption.</p>
-                                <ul>
+                                <ol>
                                     <li>copy this li element</li>
                                     <li>copy this li element</li>
                                     <li>copy this li element</li>
                                     <li>copy this li element</li>
-                                </ul>
+                                </ol>
                             </div>
                         </div>
                     </div>
