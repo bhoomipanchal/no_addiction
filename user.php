@@ -194,7 +194,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                             <div class="icon-box">
                                 <div class="icon"><i class="fa fa-cutlery"></i></div>
-                                <h4><a href="./sign-in.php">Diet to follow</a></h4>
+                                <h4><a href="./diettoflow.php">Diet to follow</a></h4>
                                 <p>Weekly diet chat will be provided on the basis of your consumption.</p>
                             </div>
                         </div>
@@ -202,7 +202,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                         <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
                             <div class="icon-box">
                                 <div class="icon"><i class="fa fa-eyedropper"></i></div>
-                                <h4><a href="./sign-in.php">Medication Chart</a></h4>
+                                <h4><a href="./medicationchart.php">Medication Chart</a></h4>
                                 <p>Medication chart will be prescribed to you by the Doctor on the basic of your daily consumption.</p>
                             </div>
                         </div>
@@ -210,7 +210,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                         <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <div class="icon"><i class="fas fa-home"></i></div>
-                                <h4><a href="./sign-in.php">Activities to do at home</a></h4>
+                                <h4><a href="./homeactivities.php">Activities to do at home</a></h4>
                                 <p>List of activities will be suggedted to you to divert your mind form consuming.</p>
                             </div>
                         </div>
@@ -218,7 +218,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                         <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <div class="icon"><i class="fas fa-video-camera"></i></div>
-                                <h4><a href="./sign-in.php">Exercise Videos</a></h4>
+                                <h4><a href="./exercisevideo.php">Exercise Videos</a></h4>
                                 <p>Exercise and meditation videos will be provided.</p>
                             </div>
                         </div>
